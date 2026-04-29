@@ -107,20 +107,36 @@
             margin-top: 5rem;
         }
 
+        /* EXPERIENCE & SKILLS STYLING */
         .exp-item { margin-bottom: 2.5rem; }
         .exp-header { display: flex; justify-content: space-between; align-items: baseline; }
         .company { font-size: 1.2rem; font-weight: bold; }
         .role { color: var(--deep-ocean); font-style: italic; margin-bottom: 5px; }
         .date { font-size: 0.85rem; color: #888; }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            background: var(--soft-sky);
-            padding: 2rem;
+        .info-card {
+            background: var(--white);
+            padding: 1.5rem;
             border-radius: 12px;
-            margin-bottom: 2rem;
+            border: 1px solid var(--soft-sky);
+            margin-top: 1.5rem;
+        }
+
+        /* SKILLS TAGS */
+        .tag-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+        .tag {
+            background: var(--soft-sky);
+            color: var(--deep-ocean);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
         footer {
@@ -163,6 +179,15 @@
 
         <section id="experience" class="reveal">
             <h2>Professional Experience</h2>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="company">EY (Ernst & Young)</span>
+                    <span class="date">Incoming June 2026</span>
+                </div>
+                <div class="role">Assurance Intern | Iselin, NJ</div>
+                <p style="font-size: 0.9rem; color: #666;">Incoming summer intern focused on audit and assurance services.</p>
+            </div>
             
             <div class="exp-item">
                 <div class="exp-header">
@@ -171,9 +196,9 @@
                 </div>
                 <div class="role">Intern, Central Market Controllers</div>
                 <ul>
-                    <li>Creating financial statements for specific departments and preparing support for audits.</li>
+                    <li>Creates financial statements for specific departments and prepares support for audits.</li>
                     <li>Trained new team members on intercompany systems, including PeopleSoft Financials.</li>
-                    <li>Completed network-wide surveys for the VP of Technical Accounting on a quarterly basis.</li>
+                    <li>Completed network-wide surveys for the VP of Technical Accounting.</li>
                 </ul>
             </div>
 
@@ -184,83 +209,9 @@
                 </div>
                 <div class="role">Rutgers Campus Ambassador</div>
                 <ul>
-                    <li>Hosted table events with Alpha Chi Omega to promote awareness and fundraise for philanthropic causes.</li>
-                    <li>Organized brand awareness events with Rutgers Playa Bowls.</li>
-                </ul>
-            </div>
-
-            <div class="exp-item">
-                <div class="exp-header">
-                    <span class="company">Castle Couture</span>
-                    <span class="date">Nov 2021 – Apr 2022</span>
-                </div>
-                <div class="role">Prom Stylist</div>
-                <ul>
-                    <li>Led one-on-one appointments to help clients find dream dresses for special events.</li>
+                    <li>Hosted table events and brand awareness collaborations at Rutgers.</li>
                 </ul>
             </div>
         </section>
 
-        <section id="education" class="reveal">
-            <h2>Education</h2>
-            <div style="margin-bottom: 20px;">
-                <p><strong>Rutgers, The State University of New Jersey</strong></p>
-                <p>Rutgers Business School | Bachelor of Science, Accounting</p>
-                <ul>
-                    <li>Real Estate Concentration</li>
-                    <li>5-time Dean's List recipient</li>
-                    <li>Tutor, Rutgers Center for Real Estate</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="skills" class="reveal">
-            <h2>Skills & Involvement</h2>
-            <div class="skills-grid">
-                <div>
-                    <strong>Big Data & Tech</strong>
-                    <ul style="font-size: 0.85rem; padding-left: 15px;">
-                        <li>Power BI & Alteryx</li>
-                        <li>PeopleSoft Financials</li>
-                        <li>Adobe Illustrator & Photoshop</li>
-                        <li>Microsoft Excel Proficient</li>
-                    </ul>
-                </div>
-                <div>
-                    <strong>Campus Leadership</strong>
-                    <ul style="font-size: 0.85rem; padding-left: 15px;">
-                        <li>RBS Peer Mentor</li>
-                        <li>RU Accounting Association</li>
-                        <li>Personal Finance Club</li>
-                        <li>Residence Hall Association</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <a href="mailto:olivia.borella@rutgers.edu" style="color: var(--deep-ocean); text-decoration: none; font-weight: bold;">Email</a> | 
-            <a href="https://linkedin.com/in/oliviaborella" target="_blank" style="color: var(--deep-ocean); text-decoration: none; font-weight: bold; margin-left: 10px;">LinkedIn</a>
-        </div>
-    </footer>
-
-    <script>
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal(); // Initial check
-    </script>
-
-</body>
-</html>
+        <section
