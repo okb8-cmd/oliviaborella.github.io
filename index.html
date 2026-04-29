@@ -3,118 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Profile | Coastal Edition</title>
+    <title>Olivia Borella | Professional Portfolio</title>
     <style>
-        /* CSS VARIABLES - Coastal Palette */
         :root {
-            --ocean-blue: #0077b6;
-            --sky-blue: #e0f2f7;
-            --sand-white: #f8fbfb;
-            --slate-grey: #2c3e50;
+            --coastal-blue: #a2d2ff;
+            --deep-ocean: #0077b6;
+            --soft-sky: #eaf6ff;
+            --text-slate: #2c3e50;
             --white: #ffffff;
-            --accent-soft: #d1e9f0;
         }
 
         * { box-sizing: border-box; }
-
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Avenir', 'Segoe UI', sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: var(--sand-white);
-            color: var(--slate-grey);
+            background-color: var(--white);
+            color: var(--text-slate);
             line-height: 1.6;
         }
 
-        /* HEADER & HERO */
+        /* Hero Header with Watercolor Stripes */
         header {
-            background: linear-gradient(180deg, var(--sky-blue) 0%, var(--sand-white) 100%);
-            padding: 4rem 1rem 6rem;
-            text-align: center;
+            background-image: url('Assets/Stripes.png'); /* Rename image_6ed8f6.png to Stripes.png */
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
         }
 
-        .profile-card {
+        .profile-main {
             max-width: 900px;
-            margin: -80px auto 2rem;
-            background: var(--white);
+            margin: -100px auto 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
             padding: 3rem 2rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            border: 6px solid var(--white);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 8px solid var(--white);
             object-fit: cover;
-            margin-top: -110px;
-            background-color: var(--sky-blue);
+            margin-top: -140px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
-        /* TYPOGRAPHY */
-        h1 { color: var(--ocean-blue); font-size: 2.5rem; margin: 1rem 0 0.5rem; }
-        h2 { color: var(--ocean-blue); border-bottom: 2px solid var(--sky-blue); padding-bottom: 10px; margin-top: 3rem; }
-        h3 { color: var(--slate-grey); margin-bottom: 0.5rem; }
 
         .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        
+        h1 { font-size: 2.8rem; color: var(--deep-ocean); margin: 1rem 0 0; letter-spacing: 1px; }
+        .subtitle { font-size: 1.2rem; color: var(--coastal-blue); font-weight: bold; margin-bottom: 2rem; }
 
-        /* INFORMATION DENSITY SECTIONS */
-        .grid {
+        h2 { 
+            color: var(--deep-ocean); 
+            text-transform: uppercase; 
+            font-size: 1.1rem; 
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--soft-sky);
+            padding-bottom: 8px;
+            margin-top: 4rem;
+        }
+
+        /* Experience Layout */
+        .exp-item { margin-bottom: 2.5rem; }
+        .exp-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .company { font-size: 1.25rem; font-weight: bold; color: var(--text-slate); }
+        .role { color: var(--deep-ocean); font-style: italic; margin-bottom: 0.5rem; }
+        .date { font-size: 0.9rem; color: #888; }
+        
+        ul { padding-left: 1.2rem; }
+        li { margin-bottom: 8px; }
+
+        /* Skills Grid */
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 1.5rem;
-        }
-
-        .info-card {
-            background: var(--white);
-            padding: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            background: var(--soft-sky);
+            padding: 2rem;
             border-radius: 12px;
-            border: 1px solid var(--sky-blue);
-            transition: 0.3s;
+            margin: 2rem 0;
         }
 
-        .info-card:hover { border-color: var(--ocean-blue); transform: translateY(-3px); }
-
-        /* SKILLS TAGS */
-        .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
-        .tag {
-            background: var(--sky-blue);
-            color: var(--ocean-blue);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        /* ACTION BUTTONS */
-        .btn-container { margin-top: 3rem; text-align: center; }
-        .btn {
-            display: inline-block;
-            background-color: var(--ocean-blue);
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: opacity 0.3s;
-        }
-        .btn:hover { opacity: 0.9; }
-
+        /* Footer with Watercolor Mosaic */
         footer {
+            background-image: url('Assets/Mosaic.png'); /* Rename image_6e873b.png to Mosaic.png */
+            background-size: cover;
+            padding: 6rem 1rem 2rem;
             text-align: center;
-            padding: 4rem;
-            color: #a0acb8;
-            font-size: 0.9rem;
+            margin-top: 5rem;
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .profile-card { margin: -60px 15px 2rem; }
+        .footer-content {
+            background: white;
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
+
+        .contact-link { color: var(--deep-ocean); text-decoration: none; margin: 0 10px; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -122,64 +116,91 @@
     <header></header>
 
     <main class="container">
-        <section class="profile-card">
-            <img src="Assets/ProfilePic.jpg" alt="Professional Portrait" class="profile-img">
-            <h1>Your Name</h1>
-            <p style="font-size: 1.2rem; color: #555;">Strategic Thinker | Creative Problem Solver</p>
-            <p style="max-width: 600px; margin: 1rem auto; color: #777;">
-                Focused on delivering high-impact solutions through clear communication and technical excellence. 
-                Dedicated to navigating complex challenges with a coastal sense of calm and precision.
-            </p>
-            <div class="tags" style="justify-content: center;">
-                <span class="tag">Leadership</span>
-                <span class="tag">Project Management</span>
-                <span class="tag">Strategy</span>
+        <section class="profile-main">
+            <img src="Assets/ProfilePic.jpeg" alt="Olivia Borella" class="profile-img">
+            <h1>OLIVIA BORELLA</h1>
+            <div class="subtitle">Rutgers Business School | Accounting & Real Estate</div>
+            <p><strong>GPA: 3.638</strong> • Dean's List (5 Semesters) • Pursuing 150 credits in 4 years [cite: 8, 9, 11]</p>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="company">Hackensack Meridian Health [cite: 12]</span>
+                    <span class="date">Jun 2024 – Present [cite: 15]</span>
+                </div>
+                <div class="role">Intern, Central Market Controllers [cite: 12]</div>
+                <ul>
+                    <li>Creates financial statements for specific departments and prepares support for audits[cite: 16].</li>
+                    <li>Trains new team members on intercompany systems, including PeopleSoft Financials[cite: 16].</li>
+                    <li>Completed network-wide surveys for the VP of Technical Accounting on a quarterly basis[cite: 14].</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="company">Pura Vida [cite: 17]</span>
+                    <span class="date">Jan 2024 – May 2024 [cite: 18]</span>
+                </div>
+                <div class="role">Rutgers Campus Ambassador [cite: 17]</div>
+                <ul>
+                    <li>Hosted table events with Alpha Chi Omega to fundraise for philanthropic causes[cite: 19].</li>
+                    <li>Organized brand awareness events in collaboration with Rutgers Playa Bowls[cite: 20].</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="company">Castle Couture [cite: 21]</span>
+                    <span class="date">Nov 2021 – Apr 2022 [cite: 23]</span>
+                </div>
+                <div class="role">Prom Stylist [cite: 22]</div>
+                <ul>
+                    <li>Led one-on-one appointments to assist clients in finding dream dresses for weddings and special events[cite: 24].</li>
+                </ul>
             </div>
         </section>
 
-        <section>
-            <h2>Expertise & Skills</h2>
-            <div class="grid">
-                <div class="info-card">
-                    <h3>Core Proficiencies</h3>
-                    <p>Briefly describe your primary area of focus and what sets your work apart from others in the field.</p>
+        <section id="skills">
+            <h2>Technical Skills & Proficiencies</h2>
+            <div class="skills-grid">
+                <div>
+                    <strong>Big Data</strong>
+                    <ul>
+                        <li>Power BI [cite: 39]</li>
+                        <li>PeopleSoft [cite: 39]</li>
+                        <li>Alteryx [cite: 39]</li>
+                    </ul>
                 </div>
-                <div class="info-card">
-                    <h3>Technical Toolbox</h3>
-                    <div class="tags">
-                        <span class="tag">Tool A</span>
-                        <span class="tag">Tool B</span>
-                        <span class="tag">Tool C</span>
-                        <span class="tag">Tool D</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Recent Work</h2>
-            <div class="grid">
-                <div class="info-card">
-                    <small style="color: var(--ocean-blue); font-weight: bold;">PROJECT 01</small>
-                    <h3>Digital Transformation</h3>
-                    <p>A detailed look at how I streamlined operations for a major client, resulting in a 20% efficiency boost.</p>
-                </div>
-                <div class="info-card">
-                    <small style="color: var(--ocean-blue); font-weight: bold;">PROJECT 02</small>
-                    <h3>Community Outreach</h3>
-                    <p>Designed and executed a communication strategy that reached over 5,000 stakeholders across the region.</p>
+                <div>
+                    <strong>Creative & Office</strong>
+                    <ul>
+                        <li>Adobe Illustrator & Photoshop [cite: 40]</li>
+                        <li>Microsoft Excel & PowerPoint [cite: 38]</li>
+                        <li>Google Suite [cite: 40]</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="btn-container">
-            <a href="Assets/Resume.pdf" class="btn">Download Professional CV</a>
-            <p style="margin-top: 15px; font-size: 0.9rem;">References available upon request.</p>
+        <section id="involvement">
+            <h2>Campus Involvement</h2>
+            <ul>
+                <li><strong>Mentor:</strong> RBS Peer Mentoring for first-year students[cite: 34].</li>
+                <li><strong>Tutor:</strong> Rutgers Center for Real Estate[cite: 37].</li>
+                <li><strong>Member:</strong> RU Accounting Association & Personal Finance Club[cite: 31, 32].</li>
+            </ul>
         </section>
     </main>
 
     <footer>
-        &copy; 2026 Your Name. Hand-coded with clarity and care.
+        <div class="footer-content">
+            <a href="mailto:olivia.borella@rutgers.edu" class="contact-link">Email</a> | 
+            <a href="https://linkedin.com/in/oliviaborella" class="contact-link" target="_blank">LinkedIn</a> | 
+            <span>Matawan, NJ [cite: 2, 3]</span>
+        </div>
     </footer>
 
 </body>
