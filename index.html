@@ -24,7 +24,7 @@
 
         /* Hero Header with Watercolor Stripes */
         header {
-            background-image: url('Assets/Stripes.png'); /* Rename image_6ed8f6.png to Stripes.png */
+            background-image: url('Assets/Stripes.png');
             background-size: cover;
             background-position: center;
             height: 300px;
@@ -69,7 +69,6 @@
             margin-top: 4rem;
         }
 
-        /* Experience Layout */
         .exp-item { margin-bottom: 2.5rem; }
         .exp-header { display: flex; justify-content: space-between; align-items: baseline; }
         .company { font-size: 1.25rem; font-weight: bold; color: var(--text-slate); }
@@ -79,7 +78,6 @@
         ul { padding-left: 1.2rem; }
         li { margin-bottom: 8px; }
 
-        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -90,11 +88,13 @@
             margin: 2rem 0;
         }
 
-        /* Footer with Watercolor Mosaic */
+        /* FIXED FOOTER: Zoomed and pinned to the bottom of the image */
         footer {
-            background-image: url('Assets/Mosaic.png'); /* Rename image_6e873b.png to Mosaic.png */
-            background-size: cover;
-            padding: 6rem 1rem 2rem;
+            background-image: url('Assets/Mosaic.png');
+            background-size: 150%; /* Zooms in to help hide edge watermarks */
+            background-position: bottom center; /* Pinned to the bottom half */
+            background-repeat: no-repeat;
+            padding: 8rem 1rem 3rem;
             text-align: center;
             margin-top: 5rem;
         }
@@ -120,7 +120,7 @@
             <img src="Assets/ProfilePic.jpeg" alt="Olivia Borella" class="profile-img">
             <h1>OLIVIA BORELLA</h1>
             <div class="subtitle">Rutgers Business School | Accounting & Real Estate</div>
-            <p><strong>GPA: 3.638</strong> • Dean's List (5 Semesters) • Pursuing 150 credits in 4 years [cite: 8, 9, 11]</p>
+            <p><strong>GPA: 3.638 [cite: 8]</strong> • Dean's List (5 Semesters) [cite: 9] • Pursuing 150 credits in 4 years [cite: 11]</p>
         </section>
 
         <section id="experience">
@@ -133,9 +133,9 @@
                 </div>
                 <div class="role">Intern, Central Market Controllers [cite: 12]</div>
                 <ul>
-                    <li>Creates financial statements for specific departments and prepares support for audits[cite: 16].</li>
-                    <li>Trains new team members on intercompany systems, including PeopleSoft Financials[cite: 16].</li>
-                    <li>Completed network-wide surveys for the VP of Technical Accounting on a quarterly basis[cite: 14].</li>
+                    <li>Creates financial statements for specific departments and prepares support for audits. [cite: 16]</li>
+                    <li>Trained new team members on intercompany systems, including PeopleSoft Financials. [cite: 16]</li>
+                    <li>Completed network-wide surveys for the VP of Technical Accounting on a quarterly basis. [cite: 14]</li>
                 </ul>
             </div>
 
@@ -146,8 +146,8 @@
                 </div>
                 <div class="role">Rutgers Campus Ambassador [cite: 17]</div>
                 <ul>
-                    <li>Hosted table events with Alpha Chi Omega to fundraise for philanthropic causes[cite: 19].</li>
-                    <li>Organized brand awareness events in collaboration with Rutgers Playa Bowls[cite: 20].</li>
+                    <li>Hosted table events with Alpha Chi Omega to fundraise for philanthropic causes. [cite: 19]</li>
+                    <li>Organized brand awareness events in collaboration with Rutgers Playa Bowls. [cite: 20]</li>
                 </ul>
             </div>
 
@@ -158,7 +158,7 @@
                 </div>
                 <div class="role">Prom Stylist [cite: 22]</div>
                 <ul>
-                    <li>Led one-on-one appointments to assist clients in finding dream dresses for weddings and special events[cite: 24].</li>
+                    <li>Led one-on-one appointments to assist clients in finding dream dresses for weddings and special events. [cite: 24]</li>
                 </ul>
             </div>
         </section>
@@ -167,7 +167,7 @@
             <h2>Technical Skills & Proficiencies</h2>
             <div class="skills-grid">
                 <div>
-                    <strong>Big Data</strong>
+                    <strong>Big Data [cite: 39]</strong>
                     <ul>
                         <li>Power BI [cite: 39]</li>
                         <li>PeopleSoft [cite: 39]</li>
@@ -175,7 +175,7 @@
                     </ul>
                 </div>
                 <div>
-                    <strong>Creative & Office</strong>
+                    <strong>Creative & Office [cite: 38, 40]</strong>
                     <ul>
                         <li>Adobe Illustrator & Photoshop [cite: 40]</li>
                         <li>Microsoft Excel & PowerPoint [cite: 38]</li>
@@ -188,18 +188,18 @@
         <section id="involvement">
             <h2>Campus Involvement</h2>
             <ul>
-                <li><strong>Mentor:</strong> RBS Peer Mentoring for first-year students[cite: 34].</li>
-                <li><strong>Tutor:</strong> Rutgers Center for Real Estate[cite: 37].</li>
-                <li><strong>Member:</strong> RU Accounting Association & Personal Finance Club[cite: 31, 32].</li>
+                <li><strong>Mentor:</strong> RBS Peer Mentoring for first-year students. [cite: 34]</li>
+                <li><strong>Tutor:</strong> Rutgers Center for Real Estate. [cite: 37]</li>
+                <li><strong>Member:</strong> RU Accounting Association & Personal Finance Club. [cite: 31, 32]</li>
             </ul>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <a href="mailto:olivia.borella@rutgers.edu" class="contact-link">Email</a> | 
-            <a href="https://linkedin.com/in/oliviaborella" class="contact-link" target="_blank">LinkedIn</a> | 
-            <span>Matawan, NJ [cite: 2, 3]</span>
+            <a href="mailto:olivia.borella@rutgers.edu" class="contact-link">Email</a> [cite: 3] | 
+            <a href="https://linkedin.com/in/oliviaborella" class="contact-link" target="_blank">LinkedIn</a> [cite: 3] | 
+            <span>Matawan, NJ [cite: 2]</span>
         </div>
     </footer>
 
