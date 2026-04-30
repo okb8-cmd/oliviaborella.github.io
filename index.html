@@ -24,7 +24,6 @@
             line-height: 1.6;
         }
 
-        /* --- STICKY TOP NAVIGATION --- */
         nav {
             position: sticky;
             top: 0;
@@ -45,12 +44,8 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: 0.3s;
         }
 
-        nav a:hover { color: var(--coastal-blue); }
-
-        /* --- HERO SECTION --- */
         header {
             background-image: url('Assets/Stripes.png');
             background-size: cover;
@@ -85,7 +80,7 @@
 
         .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
         
-        h1 { font-size: 2.5rem; color: var(--deep-ocean); margin: 1rem 0 0; letter-spacing: 1px; }
+        h1 { font-size: 2.5rem; color: var(--deep-ocean); margin: 1rem 0 0; }
         .subtitle { font-size: 1.1rem; color: var(--coastal-blue); font-weight: bold; margin-bottom: 1.5rem; }
 
         h2 { 
@@ -98,12 +93,6 @@
             margin-top: 5rem;
         }
 
-        .exp-item { margin-bottom: 2.5rem; }
-        .exp-header { display: flex; justify-content: space-between; align-items: baseline; }
-        .company { font-size: 1.2rem; font-weight: bold; }
-        .role { color: var(--deep-ocean); font-style: italic; margin-bottom: 5px; }
-        .date { font-size: 0.85rem; color: #888; }
-
         .info-card {
             background: var(--white);
             padding: 1.5rem;
@@ -112,7 +101,6 @@
             margin-top: 1.5rem;
         }
 
-        .tag-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
         .tag {
             background: var(--soft-sky);
             color: var(--deep-ocean);
@@ -120,9 +108,10 @@
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: bold;
+            display: inline-block;
+            margin: 4px;
         }
 
-        /* Launch Button Styling */
         .launch-btn {
             display: inline-block;
             margin-top: 15px;
@@ -132,4 +121,85 @@
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
-            font-size
+        }
+
+        footer {
+            background-image: url('Assets/Mosaic.png');
+            background-size: 160%;
+            background-position: bottom center;
+            padding: 8rem 1rem 3rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Innovation</a>
+        <a href="#education">Education</a>
+    </nav>
+
+    <header></header>
+
+    <main class="container">
+        <section id="about" class="profile-main reveal">
+            <img src="Assets/ProfilePic.jpeg" alt="Olivia" class="profile-img">
+            <h1>OLIVIA BORELLA</h1>
+            <div class="subtitle">Accounting | Rutgers Business School</div>
+            <p><strong>GPA: 3.638</strong> | Matawan, NJ</p>
+        </section>
+
+        <section id="experience" class="reveal">
+            <h2>Experience</h2>
+            <div class="info-card">
+                <strong>EY (Ernst & Young)</strong><br>
+                <em>Assurance Intern | Incoming June 2026</em>
+            </div>
+            <div class="info-card">
+                <strong>Hackensack Meridian Health</strong><br>
+                <em>Intern, Central Market Controllers</em>
+            </div>
+        </section>
+
+        <section id="projects" class="reveal">
+            <h2>Innovation</h2>
+            <div class="info-card" style="border: 2px solid var(--coastal-blue);">
+                <h3>ISC CPA Exam Prep App</h3>
+                <p>Gamified study tool for the Information Systems and Controls (ISC) exam.</p>
+                <a href="isc-prep.html" class="launch-btn">Launch Study App →</a>
+            </div>
+        </section>
+
+        <section id="education" class="reveal">
+            <h2>Education</h2>
+            <div class="info-card">
+                <p><strong>Rutgers University</strong><br>B.S. Accounting | Real Estate</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content" style="background:white; padding:10px 20px; border-radius:30px;">
+            olivia.borella@rutgers.edu
+        </div>
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 50) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Initial call to show the first section
+        window.onload = reveal;
+    </script>
+</body>
+</html>
