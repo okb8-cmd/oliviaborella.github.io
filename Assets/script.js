@@ -3,10 +3,17 @@ let xp = 0;
 let streak = 0;
 let questions = [];
 
+// This function now assumes questions.json is in the SAME folder (Assets)
 async function loadGame() {
-    const response = await fetch('questions.json');
-    questions = await response.json();
-    renderQuestion();
+    try {
+        const response = await fetch('questions.json');
+        if (!response.ok) throw new Error('Network response was not ok');
+        questions = await response.json();
+        renderQuestion();
+    } catch (error) {
+        console.error("Failed to load questions:", error);
+        document.getElementById('question').innerText = "Error loading questions. Check file path!";
+    }
 }
 
 function renderQuestion() {
