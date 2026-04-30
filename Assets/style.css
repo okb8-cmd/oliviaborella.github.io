@@ -1,0 +1,46 @@
+/* Using your specific Coastal Variables */
+:root {
+    --coastal-blue: #a2d2ff;
+    --deep-ocean: #0077b6;
+    --soft-sky: #eaf6ff;
+    --text-slate: #2c3e50;
+    --white: #ffffff;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-slate);
+    font-family: 'Avenir', sans-serif;
+}
+
+/* The Quiz Card - styled like your portfolio info-cards */
+.info-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--soft-sky);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* The Gamified Stats Bar */
+.stats-bar {
+    background: var(--soft-sky);
+    color: var(--deep-ocean);
+    border-bottom: 2px solid var(--coastal-blue);
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Correct/Incorrect animations */
+.correct-flash {
+    background-color: #d4edda !important; /* Soft Seafoam Green */
+    transition: 0.3s;
+}
+
+.incorrect-flash {
+    background-color: #f8d7da !important; /* Soft Coral Red */
+    transition: 0.3s;
+}

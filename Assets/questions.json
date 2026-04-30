@@ -1,0 +1,242 @@
+[
+  {
+    "id": "ISC-001",
+    "blueprint_area": "Area I: Information Systems and Data Management",
+    "topic": "IT Governance",
+    "difficulty": "Recall",
+    "question_text": "Which of the following frameworks is most commonly used for IT Governance and Management?",
+    "options": {
+      "A": "COSO",
+      "B": "COBIT",
+      "C": "ISO 9000",
+      "D": "GAAP"
+    },
+    "correct_answer": "B",
+    "explanation": "COBIT (Control Objectives for Information and Related Technologies) is the leading framework for IT governance.",
+    "points": 10
+  },
+  {
+    "id": "ISC-002",
+    "blueprint_area": "Area II: Security, Confidentiality, and Privacy",
+    "topic": "SOC Reporting",
+    "difficulty": "Application",
+    "question_text": "A SOC 2 Type 2 report differs from a SOC 2 Type 1 report primarily because it tests:",
+    "options": {
+      "A": "The design of controls at a specific point in time.",
+      "B": "The operating effectiveness of controls over a period of time.",
+      "C": "Financial reporting controls only.",
+      "D": "Privacy controls for HIPAA compliance."
+    },
+    "correct_answer": "B",
+    "explanation": "Type 2 reports test the operating effectiveness over a period (usually 6-12 months), while Type 1 only tests design at a point in time.",
+    "points": 15
+  },
+  {
+    "id": "ISC-003",
+    "blueprint_area": "Area I: Information Systems and Data Management",
+    "topic": "Change Management",
+    "difficulty": "Application",
+    "question_text": "In a well-controlled environment, which individual should move code into the production environment?",
+    "options": {
+      "A": "The developer who wrote the code.",
+      "B": "The Quality Assurance (QA) lead.",
+      "C": "A designated release manager or librarian.",
+      "D": "The Chief Information Officer (CIO)."
+    },
+    "correct_answer": "C",
+    "explanation": "Segregation of duties requires that developers do not have access to push their own code to production.",
+    "points": 10
+  },
+  {
+    "id": "ISC-004",
+    "blueprint_area": "Area III: SOC Engagements",
+    "topic": "Trust Services Criteria",
+    "difficulty": "Recall",
+    "question_text": "Which Trust Services Criteria is mandatory for every SOC 2 report?",
+    "options": {
+      "A": "Availability",
+      "B": "Confidentiality",
+      "C": "Security",
+      "D": "Privacy"
+    },
+    "correct_answer": "C",
+    "explanation": "Security (Common Criteria) is the only mandatory criteria in a SOC 2 engagement.",
+    "points": 10
+  },
+  {
+    "id": "ISC-005",
+    "blueprint_area": "Area II: Security, Confidentiality, and Privacy",
+    "topic": "Cybersecurity",
+    "difficulty": "Analysis",
+    "question_text": "An auditor discovers a company uses the same password for all administrative accounts. This represents a weakness in:",
+    "options": {
+      "A": "Logical Access Controls",
+      "B": "Physical Access Controls",
+      "C": "Data Encryption",
+      "D": "Input Controls"
+    },
+    "correct_answer": "A",
+    "explanation": "Password management falls under logical access controls, which govern who can enter a system.",
+    "points": 15
+  },
+  {
+    "id": "ISC-006",
+    "blueprint_area": "Area I: Information Systems and Data Management",
+    "topic": "Business Continuity",
+    "difficulty": "Recall",
+    "question_text": "A 'Hot Site' in disaster recovery planning is best described as:",
+    "options": {
+      "A": "A facility with electricity but no equipment.",
+      "B": "A fully equipped facility ready for immediate operations.",
+      "C": "A site that only stores paper backups.",
+      "D": "A cloud storage bucket."
+    },
+    "correct_answer": "B",
+    "explanation": "Hot sites are fully operational and can take over processing almost immediately.",
+    "points": 10
+  },
+  {
+    "id": "ISC-007",
+    "blueprint_area": "Area I: Information Systems and Data Management",
+    "topic": "Data Integrity",
+    "difficulty": "Application",
+    "question_text": "Which control would best prevent a user from entering 'ABC' into a numeric 'Salary' field?",
+    "options": {
+      "A": "Check digit",
+      "B": "Field check",
+      "C": "Limit check",
+      "D": "Validity check"
+    },
+    "correct_answer": "B",
+    "explanation": "A field check ensures that the data entered is the correct character type (numeric, alphabetic, etc.).",
+    "points": 10
+  },
+  {
+    "id": "ISC-008",
+    "blueprint_area": "Area II: Security, Confidentiality, and Privacy",
+    "topic": "Encryption",
+    "difficulty": "Recall",
+    "question_text": "Which of the following uses two different keys (one public, one private) for encryption?",
+    "options": {
+      "A": "Symmetric encryption",
+      "B": "Asymmetric encryption",
+      "C": "Hashing",
+      "D": "Salting"
+    },
+    "correct_answer": "B",
+    "explanation": "Asymmetric encryption (like RSA) uses a public key to encrypt and a private key to decrypt.",
+    "points": 10
+  },
+  {
+    "id": "ISC-009",
+    "blueprint_area": "Area III: SOC Engagements",
+    "topic": "SOC 1 vs SOC 2",
+    "difficulty": "Analysis",
+    "question_text": "A payroll processing company provides services that impact its clients' financial statements. The clients' auditors likely need a:",
+    "options": {
+      "A": "SOC 1 Report",
+      "B": "SOC 2 Report",
+      "C": "SOC 3 Report",
+      "D": "ISO 27001 Certificate"
+    },
+    "correct_answer": "A",
+    "explanation": "SOC 1 reports are focused on controls relevant to the user entity's Internal Control over Financial Reporting (ICFR).",
+    "points": 15
+  },
+  {
+    "id": "ISC-010",
+    "blueprint_area": "Area I: Information Systems and Data Management",
+    "topic": "Cloud Computing",
+    "difficulty": "Recall",
+    "question_text": "In a SaaS (Software as a Service) model, who is primarily responsible for patching the underlying operating system?",
+    "options": {
+      "A": "The user organization",
+      "B": "The cloud service provider",
+      "C": "The third-party auditor",
+      "D": "The software developer"
+    },
+    "correct_answer": "B",
+    "explanation": "In SaaS, the provider manages the entire stack, including the OS and hardware.",
+    "points": 10
+  },
+  {
+    "id": "ISC-011",
+    "blueprint_area": "Area II: Security, Confidentiality, and Privacy",
+    "topic": "Network Security",
+    "difficulty": "Recall",
+    "question_text": "A firewall that examines the content of packets and blocks specific malicious commands is called a:",
+    "options": {
+      "A": "Packet filter",
+      "B": "Application-level gateway",
+      "C": "Circuit-level gateway",
+      "D": "Proxy server"
+    },
+    "correct_answer": "B",
+    "explanation": "Application-level gateways (proxies) inspect the actual data/content of the packet.",
+    "points": 10
+  },
+  {
+    "id": "ISC-012",
+    "blueprint_area": "Area I: Information Systems and Data Management",
+    "topic": "Data Analytics",
+    "difficulty": "Application",
+    "question_text": "Which tool would be most effective for automating a repetitive ETL (Extract, Transform, Load) process for audit data?",
+    "options": {
+      "A": "Microsoft Word",
+      "B": "Alteryx",
+      "C": "Adobe Illustrator",
+      "D": "PowerPoint"
+    },
+    "correct_answer": "B",
+    "explanation": "Alteryx is a leading tool for data prep and ETL automation in accounting and audit.",
+    "points": 10
+  },
+  {
+    "id": "ISC-013",
+    "blueprint_area": "Area II: Security, Confidentiality, and Privacy",
+    "topic": "Privacy",
+    "difficulty": "Analysis",
+    "question_text": "Under the GDPR, which of the following is considered 'Personal Data'?",
+    "options": {
+      "A": "An IP address",
+      "B": "Aggregated annual revenue",
+      "C": "A company's tax ID number",
+      "D": "Anonymous survey results"
+    },
+    "correct_answer": "A",
+    "explanation": "GDPR defines personal data broadly, including identifiers like IP addresses and cookie IDs.",
+    "points": 15
+  },
+  {
+    "id": "ISC-014",
+    "blueprint_area": "Area III: SOC Engagements",
+    "topic": "Complementary User Entity Controls",
+    "difficulty": "Application",
+    "question_text": "Complementary User Entity Controls (CUECs) are controls that:",
+    "options": {
+      "A": "The service auditor performs.",
+      "B": "The service organization expects the client to have in place.",
+      "C": "Are optional for both parties.",
+      "D": "Are only required in Type 1 reports."
+    },
+    "correct_answer": "B",
+    "explanation": "CUECs are controls at the client (user) level that are necessary to achieve the service organization's control objectives.",
+    "points": 10
+  },
+  {
+    "id": "ISC-015",
+    "blueprint_area": "Area II: Security, Confidentiality, and Privacy",
+    "topic": "Cyber Threats",
+    "difficulty": "Recall",
+    "question_text": "A 'Phishing' attack that targets a specific high-level executive is known as:",
+    "options": {
+      "A": "Whaling",
+      "B": "Smishing",
+      "C": "Vishing",
+      "D": "Social Engineering"
+    },
+    "correct_answer": "A",
+    "explanation": "Whaling is a specific type of spear-phishing aimed at high-profile targets like CFOs or CEOs.",
+    "points": 10
+  }
+]
