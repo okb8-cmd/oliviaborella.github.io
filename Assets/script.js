@@ -1,67 +1,50 @@
-// --- Reveal Animation ---
-function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        if (elementTop < windowHeight - 50) { reveals[i].classList.add("active"); }
-    }
-}
-window.addEventListener("scroll", reveal);
-window.onload = reveal;
-
-// --- Quiz Gamification Logic ---
-let globalQuestions = [];
 let currentIdx = 0;
 let xp = 0;
 let streak = 0;
+let questions = [];
 
-async function startApp() {
-    try {
-        const res = await fetch('questions.json');
-        globalQuestions = await res.json();
-        document.getElementById('quiz-box').style.display = 'block';
-        renderQuestion();
-    } catch (err) {
-        console.error("Error fetching questions:", err);
-    }
+async function loadGame() {
+    const response = await fetch('questions.json');
+    questions = await response.json();
+    renderQuestion();
 }
 
 function renderQuestion() {
-    const q = globalQuestions[currentIdx];
-    document.getElementById('q-text').innerText = (currentIdx + 1) + ". " + q.question_text;
-    document.getElementById('feedback').innerText = "";
-    document.getElementById('explain-box').innerText = "";
-    document.getElementById('nxt-btn').style.display = "none";
-    
-    const box = document.getElementById('ans-box');
-    box.innerHTML = "";
-    
-    for (const [key, value] of Object.entries(q.options)) {
-        const b = document.createElement('button');
-        b.className = 'option-btn';
-        b.innerText = `${key}: ${value}`;
-        b.onclick = () => validate(key, q.correct_answer, q.explanation);
-        box.appendChild(b);
-    }
+    const q = questions[currentIdx];
+    document.getElementById('question').innerText = q.question_text;
+    const optionsDiv = document.getElementById('options');
+    optionsDiv.innerHTML = '';
+    document.getElementById('feedback').innerText = '';
+    document.getElementById('next').style.display = 'none';
+
+    Object.entries(q.options).forEach(([key, value]) => {
+        const btn = document.createElement('button');
+        btn.className = 'btn';
+        btn.innerText = `${key}: ${value}`;
+        btn.onclick = () => checkAnswer(key, q.correct_answer);
+        optionsDiv.appendChild(btn);
+    });
 }
 
-function validate(choice, correct, reason) {
-    const feed = document.getElementById('feedback');
-    const btns = document.querySelectorAll(".option-btn");
-    btns.forEach(btn => btn.disabled = true); // Disable buttons after choice
-
+function checkAnswer(choice, correct) {
+    const feedback = document.getElementById('feedback');
     if (choice === correct) {
         xp += 10; streak += 1;
-        feed.innerHTML = "<span style='color:green'>✅ Correct!</span>";
+        feedback.innerText = "✅ Correct! +10 XP";
+        feedback.style.color = "green";
     } else {
         streak = 0;
-        feed.innerHTML = "<span style='color:red'>❌ Incorrect</span>";
+        feedback.innerText = "❌ Incorrect. The answer was " + correct;
+        feedback.style.color = "red";
     }
-    document.getElementById('explain-box').innerText = reason;
-    document.getElementById('xp-val').innerText = xp;
-    document.getElementById('streak-val').innerText = streak;
-    
-    currentIdx = (currentIdx + 1) % globalQuestions.length;
-    document.getElementById('nxt-btn').style.display = "block";
+    document.getElementById('xp').innerText = xp;
+    document.getElementById('streak').innerText = streak;
+    document.getElementById('next').style.display = 'inline-block';
 }
+
+function nextQuestion() {
+    currentIdx = (currentIdx + 1) % questions.length;
+    renderQuestion();
+}
+
+loadGame();
