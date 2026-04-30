@@ -24,6 +24,7 @@
             line-height: 1.6;
         }
 
+        /* --- NAVIGATION --- */
         nav {
             position: sticky;
             top: 0;
@@ -44,7 +45,10 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            transition: 0.3s;
         }
+
+        nav a:hover { color: var(--coastal-blue); }
 
         header {
             background-image: url('Assets/Stripes.png');
@@ -80,7 +84,7 @@
 
         .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
         
-        h1 { font-size: 2.5rem; color: var(--deep-ocean); margin: 1rem 0 0; }
+        h1 { font-size: 2.5rem; color: var(--deep-ocean); margin: 1rem 0 0; letter-spacing: 1px; }
         .subtitle { font-size: 1.1rem; color: var(--coastal-blue); font-weight: bold; margin-bottom: 1.5rem; }
 
         h2 { 
@@ -93,6 +97,12 @@
             margin-top: 5rem;
         }
 
+        .exp-item { margin-bottom: 2.5rem; }
+        .exp-header { display: flex; justify-content: space-between; align-items: baseline; }
+        .company { font-size: 1.2rem; font-weight: bold; }
+        .role { color: var(--deep-ocean); font-style: italic; margin-bottom: 5px; }
+        .date { font-size: 0.85rem; color: #888; }
+
         .info-card {
             background: var(--white);
             padding: 1.5rem;
@@ -101,6 +111,7 @@
             margin-top: 1.5rem;
         }
 
+        .tag-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
         .tag {
             background: var(--soft-sky);
             color: var(--deep-ocean);
@@ -108,20 +119,23 @@
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: bold;
-            display: inline-block;
-            margin: 4px;
         }
 
-        .launch-btn {
-            display: inline-block;
-            margin-top: 15px;
-            background: var(--deep-ocean);
-            color: white !important;
-            padding: 10px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
+        /* --- APP SPECIFIC STYLES --- */
+        #quiz-box {
+            display: none;
+            background: #fff;
+            border: 2px solid var(--coastal-blue);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
         }
+        .option-btn {
+            display: block; width: 100%; padding: 10px; margin: 5px 0;
+            background: var(--soft-sky); border: none; border-radius: 8px;
+            cursor: pointer; font-weight: bold; color: var(--deep-ocean);
+        }
+        .option-btn:hover { background: var(--coastal-blue); color: white; }
 
         footer {
             background-image: url('Assets/Mosaic.png');
@@ -137,69 +151,159 @@
     <nav>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Innovation</a>
+        <a href="#projects">ISC App</a>
         <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
     </nav>
 
     <header></header>
 
     <main class="container">
         <section id="about" class="profile-main reveal">
-            <img src="Assets/ProfilePic.jpeg" alt="Olivia" class="profile-img">
+            <img src="Assets/ProfilePic.jpeg" alt="Olivia Borella" class="profile-img">
             <h1>OLIVIA BORELLA</h1>
             <div class="subtitle">Accounting | Rutgers Business School</div>
-            <p><strong>GPA: 3.638</strong> | Matawan, NJ</p>
+            <p><strong>GPA: 3.638</strong> • Dean's List (5 Semesters) • Pursuing 150 credits in 4 years</p>
+            <p>Matawan, NJ | olivia.borella@rutgers.edu</p>
         </section>
 
         <section id="experience" class="reveal">
-            <h2>Experience</h2>
-            <div class="info-card">
-                <strong>EY (Ernst & Young)</strong><br>
-                <em>Assurance Intern | Incoming June 2026</em>
+            <h2>Professional Experience</h2>
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="company">EY (Ernst & Young)</span>
+                    <span class="date">Incoming June 2026</span>
+                </div>
+                <div class="role">Assurance Intern | Iselin, NJ</div>
+                <p style="font-size: 0.9rem; color: #666;">Incoming summer intern focused on audit and assurance services for global clients.</p>
             </div>
-            <div class="info-card">
-                <strong>Hackensack Meridian Health</strong><br>
-                <em>Intern, Central Market Controllers</em>
+            
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="company">Hackensack Meridian Health</span>
+                    <span class="date">Jun 2024 – Present</span>
+                </div>
+                <div class="role">Intern, Central Market Controllers | Edison, NJ</div>
+                <ul>
+                    <li>Creating financial statements for specific departments and preparing support for audits.</li>
+                    <li>Trained new team members on intercompany systems, including PeopleSoft Financials.</li>
+                    <li>Completed network-wide surveys for the VP of Technical Accounting on a quarterly basis.</li>
+                    <li>Tasked with Academics, Philanthropy, and Research Controller's team responsibilities.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="company">Pura Vida</span>
+                    <span class="date">Jan 2024 – May 2024</span>
+                </div>
+                <div class="role">Rutgers Campus Ambassador</div>
+                <ul>
+                    <li>Hosted table events with Alpha Chi Omega to promote awareness and fundraise for philanthropic causes.</li>
+                    <li>Organized brand awareness events in collaboration with Rutgers Playa Bowls.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="company">Castle Couture</span>
+                    <span class="date">Nov 2021 – Apr 2022</span>
+                </div>
+                <div class="role">Prom Stylist | Manalapan, NJ</div>
+                <ul>
+                    <li>Led one-hour, one-on-one appointments to assist clients in finding dream dresses for prom, pageants, and weddings.</li>
+                </ul>
             </div>
         </section>
 
         <section id="projects" class="reveal">
             <h2>Innovation</h2>
-            <div class="info-card" style="border: 2px solid var(--coastal-blue);">
-                <h3>ISC CPA Exam Prep App</h3>
-                <p>Gamified study tool for the Information Systems and Controls (ISC) exam.</p>
-                <a href="isc-prep.html" class="launch-btn">Launch Study App →</a>
+            <div class="info-card">
+                <h3>ISC CPA Study Tool</h3>
+                <p>Developing an interactive tool for the Information Systems and Controls exam.</p>
+                <button onclick="startQuiz()" style="background:var(--deep-ocean); color:white; border:none; padding:10px 20px; border-radius:20px; cursor:pointer;">Open Study App</button>
+                
+                <div id="quiz-box">
+                    <div id="stats">✨ XP: <span id="xp">0</span> | 🔥 Streak: <span id="streak">0</span></div>
+                    <hr>
+                    <p id="q-text">Loading...</p>
+                    <div id="ans-box"></div>
+                    <p id="explain" style="font-size:0.8rem; color:#666;"></p>
+                </div>
             </div>
         </section>
 
         <section id="education" class="reveal">
             <h2>Education</h2>
             <div class="info-card">
-                <p><strong>Rutgers University</strong><br>B.S. Accounting | Real Estate</p>
+                <p><strong>Rutgers, The State University of New Jersey</strong></p>
+                <p>Bachelor of Science, Accounting | Real Estate Concentration</p>
+                <p>GPA: 3.638 | Dean's List (5 consecutive semesters)</p>
+                <div class="tag-container">
+                    <span class="tag">Tutor, Center for Real Estate</span>
+                    <span class="tag">RBS Peer Mentor</span>
+                    <span class="tag">150 Credit Track</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="reveal">
+            <h2>Skills & Involvement</h2>
+            <div class="tag-container">
+                <span class="tag">Power BI</span> <span class="tag">Alteryx</span> <span class="tag">PeopleSoft</span> <span class="tag">Microsoft Excel</span>
+                <span class="tag">Adobe Illustrator</span> <span class="tag">RU Accounting Assoc.</span> <span class="tag">Personal Finance Club</span>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content" style="background:white; padding:10px 20px; border-radius:30px;">
-            olivia.borella@rutgers.edu
+        <div class="footer-content" style="background:white; display:inline-block; padding:10px 30px; border-radius:50px;">
+            <a href="mailto:olivia.borella@rutgers.edu" style="color: var(--deep-ocean); text-decoration: none;">Email</a> | 
+            <a href="https://linkedin.com/in/oliviaborella" target="_blank" style="color: var(--deep-ocean); text-decoration: none; margin-left:10px;">LinkedIn</a>
         </div>
     </footer>
 
     <script>
+        // REVEAL ANIMATION
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 50) {
-                    reveals[i].classList.add("active");
-                }
+                if (elementTop < windowHeight - 50) { reveals[i].classList.add("active"); }
             }
         }
         window.addEventListener("scroll", reveal);
-        // Initial call to show the first section
         window.onload = reveal;
+
+        // QUIZ LOGIC
+        let xp = 0; let streak = 0;
+        function startQuiz() {
+            document.getElementById('quiz-box').style.display = 'block';
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            // This is a placeholder since we are keeping it all in one file for now
+            document.getElementById('q-text').innerText = "Which SOC report focuses on ICFR?";
+            const ans = document.getElementById('ans-box');
+            ans.innerHTML = `
+                <button class="option-btn" onclick="answer(true)">SOC 1</button>
+                <button class="option-btn" onclick="answer(false)">SOC 2</button>
+            `;
+        }
+
+        function answer(isCorrect) {
+            if(isCorrect) { 
+                xp += 10; streak += 1; 
+                document.getElementById('explain').innerText = "Correct! SOC 1 is for Financial Reporting.";
+            } else { 
+                streak = 0; 
+                document.getElementById('explain').innerText = "Incorrect. SOC 2 is for Trust Services Criteria.";
+            }
+            document.getElementById('xp').innerText = xp;
+            document.getElementById('streak').innerText = streak;
+        }
     </script>
 </body>
 </html>
