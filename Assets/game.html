@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ISC Study Tool | Olivia Borella</title>
+    <style>
+        body { font-family: 'Avenir', sans-serif; background: #eaf6ff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .game-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 90%; max-width: 500px; text-align: center; }
+        .stats { display: flex; justify-content: space-between; font-weight: bold; color: #0077b6; margin-bottom: 20px; }
+        .btn { display: block; width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #a2d2ff; border-radius: 8px; background: white; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background: #a2d2ff; }
+        .next-btn { background: #0077b6; color: white; border: none; padding: 10px 25px; border-radius: 50px; cursor: pointer; display: none; margin-top: 20px; }
+        .exit { display: block; margin-top: 20px; text-decoration: none; color: #888; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="game-card">
+        <div class="stats">
+            <span>✨ XP: <span id="xp">0</span></span>
+            <span>🔥 Streak: <span id="streak">0</span></span>
+        </div>
+        <h2 id="question">Loading...</h2>
+        <div id="options"></div>
+        <div id="feedback" style="margin-top:15px; font-weight:bold;"></div>
+        <button id="next" class="next-btn" onclick="nextQuestion()">Next Question →</button>
+        <a href="index.html" class="exit">← Back to Portfolio</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
