@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="app-container">
         <header class="app-header">
             <div class="stat-pill">✨ XP: <span id="xp">0</span></div>
@@ -14,16 +15,24 @@
         </header>
 
         <div class="card">
-            <div class="progress-bar"><div id="progress" class="progress-fill"></div></div>
-            <h1 style="color: #0077b6; font-size: 1.2rem; margin-top: 0;">Beyond the Resume: Get to Know Me!</h1>
-            <h2 id="question">Loading...</h2>
+            <div class="progress-bar">
+                <div id="progress" class="progress-fill"></div>
+            </div>
+
+            <h1 style="color: #0077b6; font-size: 1.1rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">Beyond the Resume</h1>
+            <h2 id="question" style="margin-top: 0; color: #2c3e50;">Loading Quiz...</h2>
+
             <div id="options" class="options-grid"></div>
-            <div id="feedback" style="margin-top:15px; font-weight:bold;"></div>
+
+            <div id="feedback" style="margin-top: 20px; font-weight: bold; min-height: 25px;"></div>
+
             <button id="next" class="action-btn" onclick="nextQuestion()" style="display:none;">Next Question →</button>
         </div>
 
         <a href="../index.html" class="back-link">← Back to Portfolio</a>
     </div>
+
     <script src="script.js"></script>
+
 </body>
 </html>
