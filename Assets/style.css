@@ -1,46 +1,21 @@
-/* Using your specific Coastal Variables */
 :root {
-    --coastal-blue: #a2d2ff;
-    --deep-ocean: #0077b6;
-    --soft-sky: #eaf6ff;
-    --text-slate: #2c3e50;
+    --primary: #0077b6;
+    --accent: #a2d2ff;
+    --bg: #eaf6ff;
     --white: #ffffff;
 }
 
-body {
-    background-color: var(--white);
-    color: var(--text-slate);
-    font-family: 'Avenir', sans-serif;
-}
-
-/* The Quiz Card - styled like your portfolio info-cards */
-.info-card {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid var(--soft-sky);
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-/* The Gamified Stats Bar */
-.stats-bar {
-    background: var(--soft-sky);
-    color: var(--deep-ocean);
-    border-bottom: 2px solid var(--coastal-blue);
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem;
-    font-weight: bold;
-    border-radius: 12px 12px 0 0;
-}
-
-/* Correct/Incorrect animations */
-.correct-flash {
-    background-color: #d4edda !important; /* Soft Seafoam Green */
-    transition: 0.3s;
-}
-
-.incorrect-flash {
-    background-color: #f8d7da !important; /* Soft Coral Red */
-    transition: 0.3s;
-}
+body { font-family: 'Avenir', sans-serif; background: var(--bg); margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+.app-container { width: 90%; max-width: 500px; }
+.app-header { display: flex; justify-content: space-between; margin-bottom: 20px; }
+.stat-pill { background: white; padding: 10px 20px; border-radius: 20px; font-weight: bold; color: var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+.card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
+.progress-bar { height: 8px; background: #eee; border-radius: 4px; margin-bottom: 20px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--accent); width: 0%; transition: 0.4s; }
+.options-grid { display: grid; gap: 10px; }
+.btn { padding: 12px; border: 2px solid #f0f4f8; border-radius: 10px; background: white; cursor: pointer; font-weight: bold; text-align: left; transition: 0.2s; }
+.btn:hover { border-color: var(--accent); background: #f9fcff; }
+.btn.correct { background: #d4edda; border-color: #28a745; }
+.btn.wrong { background: #f8d7da; border-color: #dc3545; }
+.action-btn { margin-top: 20px; width: 100%; padding: 15px; border-radius: 50px; border: none; background: var(--primary); color: white; font-weight: bold; cursor: pointer; }
+.back-link { display: block; text-align: center; margin-top: 25px; text-decoration: none; color: var(--primary); font-weight: bold; }
