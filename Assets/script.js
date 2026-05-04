@@ -1,19 +1,9 @@
-let currentIdx = 0;
-let xp = 0;
-let streak = 0;
-let questions = [];
+let currentIdx = 0, xp = 0, streak = 0, questions = [];
 
-// This function now assumes questions.json is in the SAME folder (Assets)
 async function loadGame() {
-    try {
-        const response = await fetch('questions.json');
-        if (!response.ok) throw new Error('Network response was not ok');
-        questions = await response.json();
-        renderQuestion();
-    } catch (error) {
-        console.error("Failed to load questions:", error);
-        document.getElementById('question').innerText = "Error loading questions. Check file path!";
-    }
+    const response = await fetch('questions.json');
+    questions = await response.json();
+    renderQuestion();
 }
 
 function renderQuestion() {
@@ -23,35 +13,40 @@ function renderQuestion() {
     optionsDiv.innerHTML = '';
     document.getElementById('feedback').innerText = '';
     document.getElementById('next').style.display = 'none';
+    document.getElementById('progress').style.width = (currentIdx / questions.length) * 100 + "%";
 
     Object.entries(q.options).forEach(([key, value]) => {
         const btn = document.createElement('button');
         btn.className = 'btn';
-        btn.innerText = `${key}: ${value}`;
-        btn.onclick = () => checkAnswer(key, q.correct_answer);
+        btn.innerText = value;
+        btn.onclick = (e) => checkAnswer(key, q.correct_answer, e.target);
         optionsDiv.appendChild(btn);
     });
 }
 
-function checkAnswer(choice, correct) {
-    const feedback = document.getElementById('feedback');
+function checkAnswer(choice, correct, btnElement) {
+    document.querySelectorAll('.btn').forEach(b => b.disabled = true);
     if (choice === correct) {
         xp += 10; streak += 1;
-        feedback.innerText = "✅ Correct! +10 XP";
-        feedback.style.color = "green";
+        btnElement.classList.add('correct');
+        document.getElementById('feedback').innerText = "✨ Correct!";
     } else {
         streak = 0;
-        feedback.innerText = "❌ Incorrect. The answer was " + correct;
-        feedback.style.color = "red";
+        btnElement.classList.add('wrong');
+        document.getElementById('feedback').innerText = "The answer was " + correct;
     }
     document.getElementById('xp').innerText = xp;
     document.getElementById('streak').innerText = streak;
-    document.getElementById('next').style.display = 'inline-block';
+    document.getElementById('next').style.display = 'block';
 }
 
 function nextQuestion() {
-    currentIdx = (currentIdx + 1) % questions.length;
-    renderQuestion();
+    currentIdx++;
+    if (currentIdx < questions.length) renderQuestion();
+    else {
+        document.getElementById('question').innerText = "Quiz Complete!";
+        document.getElementById('options').innerHTML = `<p>Final XP: ${xp}</p>`;
+        document.getElementById('next').style.display = 'none';
+    }
 }
-
 loadGame();
