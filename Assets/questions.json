@@ -6,7 +6,7 @@
     },
     {
         "question_text": "Which high school did I graduate from?",
-        "options": { "A": "Communications High School", "B": "Old Bridge High", "C": "Matawan Regional", "D": "Holmdel High" },
+        "options": { "A": "Communications High School", "B": "Old Bridge High School", "C": "Matawan Regional High School", "D": "Holmdel High School" },
         "correct_answer": "C"
     },
     {
@@ -16,7 +16,7 @@
     },
     {
         "question_text": "What is my cat's name?",
-        "options": { "A": "Luna", "B": "Pixie", "C": "Bella", "D": "Daisy" },
+        "options": { "A": "Luna", "B": "Pixie", "C": "Bella", "D": "George Sigma" },
         "correct_answer": "B"
     },
     {
@@ -46,7 +46,7 @@
     },
     {
         "question_text": "What is my favorite thing to do in my free time?",
-        "options": { "A": "Fishing & Beach", "B": "Puzzles", "C": "Arts and Crafts", "D": "All of the above" },
+        "options": { "A": "Fishing", "B": "Puzzles", "C": "Arts and Crafts", "D": "All of the above" },
         "correct_answer": "D"
     },
     {
