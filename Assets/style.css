@@ -1,21 +1,49 @@
-:root {
-    --primary: #0077b6;
-    --accent: #a2d2ff;
-    --bg: #eaf6ff;
-    --white: #ffffff;
+/* --- BEACH THEMED CELEBRATION ANIMATION --- */
+
+.celebration-box {
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    border: 3px solid var(--accent); /* Coastal blue border */
+    position: relative;
+    z-index: 10;
+    margin-top: 10px;
+    overflow: hidden; /* Keep animation contained */
 }
 
-body { font-family: 'Avenir', sans-serif; background: var(--bg); margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-.app-container { width: 90%; max-width: 500px; }
-.app-header { display: flex; justify-content: space-between; margin-bottom: 20px; }
-.stat-pill { background: white; padding: 10px 20px; border-radius: 20px; font-weight: bold; color: var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-.card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
-.progress-bar { height: 8px; background: #eee; border-radius: 4px; margin-bottom: 20px; overflow: hidden; }
-.progress-fill { height: 100%; background: var(--accent); width: 0%; transition: 0.4s; }
-.options-grid { display: grid; gap: 10px; }
-.btn { padding: 12px; border: 2px solid #f0f4f8; border-radius: 10px; background: white; cursor: pointer; font-weight: bold; text-align: left; transition: 0.2s; }
-.btn:hover { border-color: var(--accent); background: #f9fcff; }
-.btn.correct { background: #d4edda; border-color: #28a745; }
-.btn.wrong { background: #f8d7da; border-color: #dc3545; }
-.action-btn { margin-top: 20px; width: 100%; padding: 15px; border-radius: 50px; border: none; background: var(--primary); color: white; font-weight: bold; cursor: pointer; }
-.back-link { display: block; text-align: center; margin-top: 25px; text-decoration: none; color: var(--primary); font-weight: bold; }
+/* Base style for the floating elements */
+.sea-shell {
+    position: absolute;
+    bottom: -50px; /* Start off screen */
+    font-size: 1.8rem;
+    opacity: 0.9;
+    user-select: none;
+    pointer-events: none;
+    animation: floatUp 4s linear infinite; /* All float up */
+}
+
+/* Individual positioning and timing for randomness */
+.sea-shell:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 3.5s; }
+.sea-shell:nth-child(2) { left: 25%; animation-delay: 1s; animation-duration: 4s; }
+.sea-shell:nth-child(3) { left: 40%; animation-delay: 2s; animation-duration: 3s; }
+.sea-shell:nth-child(4) { left: 60%; animation-delay: 0.5s; animation-duration: 4.5s; }
+.sea-shell:nth-child(5) { left: 75%; animation-delay: 1.5s; animation-duration: 3.8s; }
+.sea-shell:nth-child(6) { left: 90%; animation-delay: 2.5s; animation-duration: 4.2s; }
+
+/* The animation logic */
+@keyframes floatUp {
+    0% { 
+        transform: translateY(0) rotate(0deg); 
+        opacity: 0; 
+    }
+    10% { 
+        opacity: 1; 
+    }
+    90% {
+        opacity: 1;
+    }
+    100% { 
+        transform: translateY(-250px) rotate(360deg); /* Float high and spin */
+        opacity: 0; 
+    }
+}
